@@ -1,0 +1,30 @@
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.exe
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.deps.json
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.runtimeconfig.json
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.runtimeconfig.dev.json
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.dll
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.pdb
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csprojAssemblyReference.cache
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.OsuBgDeleterMain.resources
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csproj.GenerateResource.cache
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.AssemblyInfoInputs.cache
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.AssemblyInfo.cs
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csproj.CoreCompileInputs.cache
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.dll
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.pdb
+C:\Users\naqui\source\repos\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.genruntimeconfig.cache
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.exe
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.deps.json
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.runtimeconfig.json
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.runtimeconfig.dev.json
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.dll
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\bin\Release\netcoreapp3.1\OsuBGDeleter.pdb
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csprojAssemblyReference.cache
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.OsuBgDeleterMain.resources
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csproj.GenerateResource.cache
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.AssemblyInfoInputs.cache
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.AssemblyInfo.cs
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.csproj.CoreCompileInputs.cache
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.dll
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.pdb
+D:\CSharp Projects\OsuBGDeleter\OsuBGDeleter\obj\Release\netcoreapp3.1\OsuBGDeleter.genruntimeconfig.cache
