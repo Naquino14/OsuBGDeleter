@@ -31,6 +31,7 @@ namespace OsuBGDeleter
         // watch me do it anyway
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OsuBgDeleterMain));
             this.label1 = new System.Windows.Forms.Label();
             this.selectDir = new System.Windows.Forms.Button();
             this.dirTextbox = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@ namespace OsuBGDeleter
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabDeleter = new System.Windows.Forms.TabPage();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.checkboxSBFolders = new System.Windows.Forms.CheckBox();
             this.tgtImgType = new System.Windows.Forms.GroupBox();
             this.buttonSaveImgType = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -92,24 +94,26 @@ namespace OsuBGDeleter
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(261, 167);
             this.tabControl.TabIndex = 4;
-            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabDeleter
             // 
+            this.tabDeleter.BackColor = System.Drawing.Color.Orchid;
             this.tabDeleter.Controls.Add(this.selectDir);
             this.tabDeleter.Controls.Add(this.deleteButton);
             this.tabDeleter.Controls.Add(this.label1);
             this.tabDeleter.Controls.Add(this.dirTextbox);
+            this.tabDeleter.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabDeleter.Location = new System.Drawing.Point(4, 29);
             this.tabDeleter.Name = "tabDeleter";
             this.tabDeleter.Padding = new System.Windows.Forms.Padding(3);
             this.tabDeleter.Size = new System.Drawing.Size(253, 134);
             this.tabDeleter.TabIndex = 0;
             this.tabDeleter.Text = "Deleter";
-            this.tabDeleter.UseVisualStyleBackColor = true;
             // 
             // tabSettings
             // 
+            this.tabSettings.BackColor = System.Drawing.Color.Orchid;
+            this.tabSettings.Controls.Add(this.checkboxSBFolders);
             this.tabSettings.Controls.Add(this.tgtImgType);
             this.tabSettings.Location = new System.Drawing.Point(4, 29);
             this.tabSettings.Name = "tabSettings";
@@ -117,10 +121,21 @@ namespace OsuBGDeleter
             this.tabSettings.Size = new System.Drawing.Size(253, 134);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
-            this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // checkboxSBFolders
+            // 
+            this.checkboxSBFolders.AutoSize = true;
+            this.checkboxSBFolders.Location = new System.Drawing.Point(10, 110);
+            this.checkboxSBFolders.Name = "checkboxSBFolders";
+            this.checkboxSBFolders.Size = new System.Drawing.Size(150, 24);
+            this.checkboxSBFolders.TabIndex = 2;
+            this.checkboxSBFolders.Text = "Include Map Skins";
+            this.checkboxSBFolders.UseVisualStyleBackColor = true;
+            this.checkboxSBFolders.CheckedChanged += new System.EventHandler(this.checkboxSBFolders_CheckedChanged);
             // 
             // tgtImgType
             // 
+            this.tgtImgType.BackColor = System.Drawing.Color.Orchid;
             this.tgtImgType.Controls.Add(this.buttonSaveImgType);
             this.tgtImgType.Controls.Add(this.comboBox1);
             this.tgtImgType.Location = new System.Drawing.Point(3, 3);
@@ -157,14 +172,17 @@ namespace OsuBGDeleter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 186);
+            this.BackColor = System.Drawing.Color.Fuchsia;
+            this.ClientSize = new System.Drawing.Size(285, 196);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OsuBgDeleterMain";
             this.Text = "OsuBgDeleter";
             this.tabControl.ResumeLayout(false);
             this.tabDeleter.ResumeLayout(false);
             this.tabDeleter.PerformLayout();
             this.tabSettings.ResumeLayout(false);
+            this.tabSettings.PerformLayout();
             this.tgtImgType.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -182,6 +200,7 @@ namespace OsuBGDeleter
         private System.Windows.Forms.GroupBox tgtImgType;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonSaveImgType;
+        private System.Windows.Forms.CheckBox checkboxSBFolders;
     }
 }
 

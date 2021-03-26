@@ -22,19 +22,24 @@ namespace OsuBGDeleter
         private TextBox textBox;
         private ComboBox imageComboBox;
         private Button deleteButton;
+        private CheckBox ignoreSBcheckbox;
 
         private string[] pngFiles;
         private string[] jpgFiles;
+
+        private bool includeMapSkins = false;
+
         public void init(TextBox _textbox, 
             ComboBox comboBox,
-            Button delButton
+            Button delButton,
+            CheckBox ignoreSB
             )
         {
             textBox = _textbox;
             imageComboBox = comboBox;
             deleteButton = delButton;
             deleteButton.Enabled = false;
-
+            ignoreSBcheckbox = ignoreSB;
 
             int qInd = 0;
             switch (settings.Default.imgtype)
@@ -67,37 +72,51 @@ namespace OsuBGDeleter
                 MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void DeleteOnClick()
         {
             try
             {
                 int sum = 0;
-                if (currentImgType == imgtype.both)
+                (string[] files, int sum) pngResult;
+                (string[] files, int sum) jpgResult;
+
+                pngFiles = Directory.GetFiles(path, "*.png", SearchOption.AllDirectories);
+                jpgFiles = Directory.GetFiles(path, "*.jpg", SearchOption.AllDirectories);
+
+                if (!includeMapSkins)
                 {
-                    pngFiles = Directory.GetFiles(path, "*.png");
-                    jpgFiles = Directory.GetFiles(path, "*.jpg");
-                    sum = pngFiles.Length + jpgFiles.Length;
+                    pngResult = DeleteSb(pngFiles);
+                    jpgResult = DeleteSb(jpgFiles);
+                    pngFiles = pngResult.files;
+                    jpgFiles = jpgResult.files;
+                    sum = pngResult.sum + jpgResult.sum;
                 }
-                if (currentImgType == imgtype.png)
+                if (includeMapSkins)
                 {
-                    pngFiles = Directory.GetFiles(path, "*.png");
-                    sum = pngFiles.Length;
+                    if (currentImgType == imgtype.both)
+                        sum = pngFiles.Length + jpgFiles.Length;
+                    if (currentImgType == imgtype.png)
+                        sum = pngFiles.Length;
+                    if (currentImgType == imgtype.jpg)
+                        sum = jpgFiles.Length;
                 }
-                if (currentImgType == imgtype.jpg)
-                {
-                    jpgFiles = Directory.GetFiles(path, "*.jpg");
-                    sum = jpgFiles.Length;
-                }
-                    
 
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to permanently delete these files? There are " + sum + " files to be deleted.", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
                 if (dialogResult == DialogResult.No)
                     return;
+                
+                if (currentImgType == imgtype.both)
+                {
+                    Delete(pngFiles);
+                    Delete(jpgFiles);
+                }
+                if (currentImgType == imgtype.png)
+                    Delete(pngFiles);
+                if (currentImgType == imgtype.jpg)
+                    Delete(jpgFiles);
 
-                Delete();
-
-                MessageBox.Show("No more anime lolololololololololololololol", "Rekt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Images successfully deleted.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -124,28 +143,44 @@ namespace OsuBGDeleter
                     break;
             }
             settings.Default.imgtype = qInd;
-
         }
 
-        private void Delete()
+        public void SBFolderOnUpdate()
+        {
+            if (!ignoreSBcheckbox.Checked)
+                includeMapSkins = false;
+            if (ignoreSBcheckbox.Checked)
+                includeMapSkins = true;
+        }
+
+        private (string[] result, int sum) DeleteSb(String[] input)
+        {
+            string[] result = new string[input.Length];
+            int index = 0;
+            int sum = 0;
+            foreach (string file in input)
+            {
+                if (file.Contains("\\sb\\") || file.Contains("\\SB\\"))
+                    result[index] = "nul";
+                else
+                {
+                    result[index] = input[index];
+                    sum++;
+                }
+                index++;
+            }
+            return (result, sum);
+        }
+
+        private void Delete(String[] input)
         {
             try
             {
-                if (currentImgType == imgtype.both)
-                {
-                    foreach (string file in pngFiles)
+                foreach (string file in input)
+                    if (!file.Contains("nul"))
                         File.Delete(file);
-                    foreach (string file in jpgFiles)
-                        File.Delete(file);
-                }
-                if (currentImgType == imgtype.png)
-                    foreach (string file in pngFiles)
-                        File.Delete(file);
-                if (currentImgType == imgtype.jpg)
-                    foreach (string file in jpgFiles)
-                        File.Delete(file);
-
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

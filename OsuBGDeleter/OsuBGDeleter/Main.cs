@@ -16,21 +16,19 @@ namespace OsuBGDeleter
 
         public OsuBgDeleterMain()
         {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
             dirTextbox.ReadOnly = true;
             fb.init(dirTextbox,
                 comboBox1,
-                deleteButton
+                deleteButton,
+                checkboxSBFolders
                 );
         }
 
         private void selectDir_Click(object sender, EventArgs e) => fb.SelectDirOnClick();
         private void deleteButton_Click(object sender, EventArgs e) => fb.DeleteOnClick();
-
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // unused
-        }
         private void buttonSaveImgType_Click(object sender, EventArgs e) => fb.ImageTypeOnChange();
+        private void checkboxSBFolders_CheckedChanged(object sender, EventArgs e) => fb.SBFolderOnUpdate();
     }
 }
